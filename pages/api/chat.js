@@ -22,13 +22,6 @@ export default async function handler(req, res) {
     return cartaEscolhida;
   };
 
-  // Função para sortear qualquer carta do tarotDeck (Arcanos Maiores e Menores)
-  const sortearCarta = () => {
-    const cartas = Object.keys(tarotDeck);
-    const cartaEscolhida = cartas[Math.floor(Math.random() * cartas.length)];
-    return cartaEscolhida;
-  };
-
   const respostaIA = async (entrada) => {
     const completions = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
